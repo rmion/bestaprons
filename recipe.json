@@ -1,0 +1,67 @@
+{
+    "name": "Seared Salmon & Lemon Yogurt",
+    "sides": "Carrot & Currant Couscous",
+    "photo": "",
+    "main_ingredient": "fish",
+    "time": {
+        "min": 20,
+        "max": 30
+    },
+    "servings": 2,
+    "ingredients": [
+        {
+            "name": "Middle eastern-style spiced wild salmon fillets",
+            "qty": "2"
+        },
+        {
+            "name": "Carrots",
+            "qty": "6 oz"
+        },
+        {
+            "name": "Pink or yellow lemon",
+            "qty": "1"
+        },
+        {
+            "name": "Dried currants",
+            "qty": "2 tbsps"
+        },
+        {
+            "name": "Yellow couscous",
+            "qty": "1/2 cup"
+        },
+        {
+            "name": "Grape or cherry tomatoes",
+            "qty": "4 oz"
+        },
+        {
+            "name": "Garlic",
+            "qty": "2 cloves"
+        },
+        {
+            "name": "Plain nonfat greek yogurt",
+            "qty": "1/2 cup"
+        }
+    ],
+    "instructions": [
+        {
+            "heading": "Prepare the ingredients & make the lemon yogurt",
+            "steps": "Wash and dry the fresh produce. Peel the carrots; halve lengthwise, then thinly slice crosswise. Peel and roughly chop 2 cloves of garlic. Halve the tomatoes. Quarter and deseed the lemon. In a bowl, combine the yogurt and the juice of 2 lemon wedges. Taste, then season with salt and pepper if desired."
+        },
+        {
+            "heading": "Cook the couscous",
+            "steps": "In a medium pot, combine the couscous, currants, and 3/4 cup of water; season with salt and pepper. Heat to boiling on high. Once boiling, turn off the heat. Cover and let stand 6 to 8 minutes, or until the water has been absorbed and the couscous is tender. Fluff with a fork. Cover to keep warm."
+        },
+        {
+            "heading": "Cook the fish",
+            "steps": "While the couscous cooks, pat the fish dry with paper towels. Season with salt and pepper on both sides. In a medium pan (nonstick, if you have one), heat 1 teaspoon of olive oil on medium until hot. Add the seasoned fish, skin side up. Loosely cover the pan with foil and cook 3 to 5 minutes, or until lightly browned. Flip and cook 2 to 4 minutes, or until browned and cooked through. Leaving any browned bits (or fond) in the pan, transfer to a plate."
+        },
+        {
+            "heading": "Cook the vegetables",
+            "steps": "Add 1 teaspoon of olive oil to the pan of reserved fond; heat on medium-high until hot. Add the sliced carrots. Cook, stirring occasionally, 3 to 4 minutes, or until lightly browned. Add the chopped garlic and halved tomatoes. Cook, stirring frequently, 30 seconds to 1 minute, or until slightly softened. Turn off the heat."
+        },
+        {
+            "heading": "Finish the couscous & serve your dish",
+            "steps": "To the pot of cooked couscous, add the cooked vegetables, the juice of the remaining lemon wedges, and 1 teaspoon of olive oil. Stir to combine. Taste, then season with salt and pepper if desired. Serve the cooked fish over the finished couscous. Top with the lemon yogurt. Enjoy!"
+        }
+    ]
+}
