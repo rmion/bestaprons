@@ -4,14 +4,14 @@ const MongoClient = require('mongodb').MongoClient;
 const ObjectId = require('mongodb').ObjectId
 const uri = "mongodb+srv://m220student:m220password@blueapron-cdwwe.mongodb.net/meals?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
+const PORT = process.env.PORT || 5000
+const path = require('path');
 const app = express();
-const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use('/', express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/api/meals', (req, res) => {
   client.connect(err => {
@@ -44,22 +44,6 @@ app.get('/api/menu/', (req, res) => {
         }
       )
     })
-
-
-    // collection.find({
-    //   "_id": { $in: }
-    // }
-    //   ObjectId(req.params.id), {
-    //     projection: {
-    //       "name": 1,
-    //       "sides": 1,
-    //       "photo": 1,
-    //       "time": 1
-    //     }
-    //   }, function(err, doc) {
-    //     res.jsonp(doc)
-    //   }
-    // )
     client.close();
   })
 })
@@ -117,5 +101,5 @@ app.post('/api/menu', (req, res) => {
   })
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(PORT, () => console.log(`Example app listening on port ${PORT}!`));
 
