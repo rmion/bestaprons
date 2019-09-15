@@ -4,56 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Our Favorite Blue Apron Recipes</title>
+    <title>This week's menu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
 </head>
 <body>
+    <div class="container">
+        <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    On the menu
+                </a>
+                <a class="navbar-item" href="/cookbook.html">
+                    Cookbook
+                </a>
+            </div>
+        </nav>            
+    </div>        
     <div id="app" class="section">
-        <div class="container block">
-            <h1 class="title is-3">On the menu</h1>
-            <div v-if="menu.length" class="block">
-                <menu-item 
-                    v-for="item in menu" 
-                    :meal="meals.find(meal => meal._id === item)" 
-                    :key="item" 
-                />
-            </div>
-            <article class="message is-primary" v-else>
-                <div class="message-body">
-                        Nothing added yet.
-                </div>
-            </article>
-            <div class="block">
-                <button class="button is-info" v-if="didSave === null" @click="saveMenuToDB">Save this week's menu</button>
-                <button class="button is-info" disabled v-else-if="didSave === 0">Saving...</button>
-                <button class="button is-info" disabled v-else-if="didSave === 1">Menu saved!</button>        
-            </div>
-        </div>
-        <div class="container block">
-            <h2 class="title is-3">Meals</h2>
-            <div class="buttons">
-                <meal-filter 
-                    @change-selected-ingredient="changeSelectedIngredient"
-                    v-for="ingredient in mainIngredients"
-                    :ingredient="ingredient" 
-                    :key="ingredient"
-                    :class="{ 'is-active': ingredient === selectedIngredient, 'is-primary': ingredient === selectedIngredient }"
-                    class="button"
-                />    
-            </div>
-            <div v-if="meals" class="container">
-                <meal-item 
-                    v-for="meal in filteredMeals"
-                    :meal="meal"
-                    :key="meal._id"
-                    @add-to-menu="addToMenu"
-                />
-            </div>        
+        <div v-if="meals" class="container">
+            <h1 class="title is-3">This week's menu</h1>
+            <menu-item class="card block" v-for="meal in meals" :key="meal._id" :meal="meal" />
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="./meals.js"></script>
+    <script src="./menu.js"></script>
 </body>
 </html>
