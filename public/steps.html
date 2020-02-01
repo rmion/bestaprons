@@ -37,6 +37,20 @@
                     </div>
                 </div>
             </div>
+            <table class="table block is-fullwidth is-bordered">
+                <thead>
+                    <tr>
+                        <th>Qty.</th>
+                        <th>Item</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in meal.ingredients" :key="item.name">
+                        <td>{{item.qty}}</td>
+                        <td>{{item.name}}</td>
+                    </tr>                    
+                </tbody>
+            </table>
             <step-item 
                 class="message block" 
                 v-for="step in meal.instructions" 

@@ -9,11 +9,8 @@ Vue.component('meal-filter', {
 Vue.component('meal-item', {
     props: ['meal'],
     computed: {
-        steps() {
-            return "/steps.html?id=" + this.meal._id
-        },
-        ingredients() {
-            return "/ingredients.html?id=" + this.meal._id
+        details() {
+            return "/details.html?id=" + this.meal._id
         }
     },
     template: `
@@ -28,6 +25,7 @@ Vue.component('meal-item', {
                     <div class="media-content">
                         <p class="title is-4">{{meal.name}}</p>
                         <p class="subtitle is-6">with {{meal.sides}}</p>
+                        <p class="subtitle is-5">{{meal.calories}} cals; {{meal.fat}}g</p>
                     </div>
                 </div>
                 <div class="content">
@@ -35,8 +33,8 @@ Vue.component('meal-item', {
                 </div>
             </div>
             <footer class="card-footer">
-                <a :href="ingredients" class="card-footer-item">Ingredients</a>
-                <a href="#" @click="$emit('add-to-menu', meal._id)" class="card-footer-item">Add</a>
+                <a :href="details" class="card-footer-item">Recipe</a>
+                <button @click="$emit('add-to-menu', meal._id)" class="card-footer-item">Add</button>
             </footer>    
         </div>  
     `
@@ -44,11 +42,8 @@ Vue.component('meal-item', {
 Vue.component('menu-item', {
     props: ['meal'],
     computed: {
-        steps() {
-            return "/steps.html?id=" + this.meal._id
-        },
-        ingredients() {
-            return "/ingredients.html?id=" + this.meal._id
+        details() {
+            return "/details.html?id=" + this.meal._id
         }
     },
     template: `
@@ -62,13 +57,13 @@ Vue.component('menu-item', {
                     </div>        
                     <div class="media-content">
                         <p class="title is-4">{{meal.name}}</p>
+                        <p class="subtitle is-5">{{meal.calories}} cals; {{meal.fat}}g</p>
                         <p class="subtitle is-6">{{meal.time.min}} - {{meal.time.max}} min.</p>
                     </div>
                 </div>
             </div>
             <footer class="card-footer">
-                <a :href="ingredients" class="card-footer-item">Ingredients</a>
-                <a :href="steps" class="card-footer-item">Steps</a>
+                <a :href="details" class="card-footer-item">Recipe and instructions</a>
             </footer>    
         </div>  
     `

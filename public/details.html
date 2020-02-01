@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>This week's meals</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar is-link" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="/">
+                    On the menu
+                </a>
+                <a class="navbar-item" href="/cookbook.html">
+                    Cookbook
+                </a>
+            </div>
+        </nav>            
+    </div>        
+    <div id="app" class="section">
+        <div v-if="meal" class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="card block">
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-48x48">
+                                        <img :src="meal.photo" alt="Placeholder image">
+                                    </figure>
+                                </div>        
+                                <div class="media-content">
+                                    <p class="title is-4">{{meal.name}}</p>
+                                    <p class="subtitle is-6">{{meal.time.min}} - {{meal.time.max}} min.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table block is-fullwidth is-bordered">
+                        <thead>
+                            <tr>
+                                <th>Qty.</th>
+                                <th>Item</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in meal.ingredients" :key="item.name">
+                                <td>{{item.qty}}</td>
+                                <td>{{item.name}}</td>
+                            </tr>                    
+                        </tbody>
+                    </table>        
+                </div>
+                <div class="column">
+                    <step-item 
+                        class="message block" 
+                        v-for="step in meal.instructions" 
+                        :step="step" 
+                        :key="step.heading" 
+                    />    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="./details.js"></script>
+</body>
+</html>

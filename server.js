@@ -24,7 +24,9 @@ app.get('/api/meals', (req, res) => {
         "sides": 1,
         "photo": 1,
         "main_ingredient": 1,
-        "time": 1
+        "time": 1,
+        "calories": 1,
+        "fat": 1
       }
     }).toArray((err, docs) => res.jsonp(docs))
     client.close();
@@ -47,7 +49,7 @@ app.get('/api/menu/', (req, res) => {
     client.close();
   })
 })
-app.get('/api/steps/:id', (req, res) => {
+app.get('/api/details/:id', (req, res) => {
   client.connect(err => {
     if (err) { console.log(err) }
     const collection = client.db("meals").collection("recipes");
@@ -59,28 +61,8 @@ app.get('/api/steps/:id', (req, res) => {
           "sides": 1,
           "photo": 1,
           "time": 1,
+          "ingredients": 1,
           "instructions": 1
-        }
-      }, function(err, doc) { 
-        res.jsonp(doc) 
-      }
-    )
-    client.close();
-  });
-})
-app.get('/api/ingredients/:id', (req, res) => {
-  client.connect(err => {
-    if (err) { console.log(err) }
-    const collection = client.db("meals").collection("recipes");
-    // perform actions on the collection object
-    collection.findOne(
-      ObjectId(req.params.id), {
-        projection: {
-          "name": 1,
-          "sides": 1,
-          "photo": 1,
-          "time": 1,
-          "ingredients": 1
         }
       }, function(err, doc) { 
         res.jsonp(doc) 
