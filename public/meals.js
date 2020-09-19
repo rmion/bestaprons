@@ -92,8 +92,8 @@ let vm = new Vue({
             fetch('/api/meals')
                 .then(response => response.json())
                 .then(meals => { 
-                    vm.meals = meals;
-                    vm.filteredMeals = meals;
+                    vm.meals = meals.reverse();
+                    vm.filteredMeals = meals.reverse();
                 })
         },
         filterByMainIngredient() {
