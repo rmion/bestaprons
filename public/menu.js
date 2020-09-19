@@ -41,7 +41,7 @@ let vm = new Vue({
             fetch("/api/menu")
                 .then(response => response.json())
                 .then(meals => { 
-                    vm.meals = meals;
+                    vm.meals = meals.reverse();
                 })
         },
     },
