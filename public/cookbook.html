@@ -56,7 +56,7 @@
             </div>
             <div v-if="meals" class="container">
                 <meal-item 
-                    v-for="meal in filteredMeals"
+                    v-for="meal in filteredMeals.reverse()"
                     :meal="meal"
                     :key="meal._id"
                     @add-to-menu="addToMenu"
