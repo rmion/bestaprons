@@ -81,6 +81,8 @@ let vm = new Vue({
             "chicken",
             "fish",
             "pork",
+            "turkey",
+            "vegetarian"
         ],
         didSave: null
     },
