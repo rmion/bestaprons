@@ -27,6 +27,9 @@ app.get('/api/meals', (req, res) => {
         "time": 1,
         "calories": 1,
         "fat": 1
+      },
+      sort: {
+        "_id": -1
       }
     }).toArray((err, docs) => res.jsonp(docs))
     client.close();
